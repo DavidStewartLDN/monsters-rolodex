@@ -27,25 +27,22 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      monsters: [
-        {
-          name: 'Frankenstein Reynolds',
-          id: 'asc1'
-        },
-        {
-          name: 'Dee-racula',
-          id: 'asr2'
-        },
-        {
-          name: 'Zombi-Charlie',
-          id: 'as1w'
-        }
-      ]
+      monsters: []
     }
   }
+  
+/*  When this component mounts, e.g. puts the componet on the page. It calls whatever is inside the block of code */
+
+componentDidMount() {
+  fetch('https://jsonplaceholder.typicode.com/users')
+  .then(response => response.json())
+  .then(users => this.setState({monsters: users}))
+}
+
 
 
   render() {
+    console.log(this.state)
     return (
       <div className="App">
       {
