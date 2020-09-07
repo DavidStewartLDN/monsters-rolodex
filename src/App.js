@@ -27,7 +27,20 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      string: "I'm sorry Dave, I'm afraid I can't let you do that."
+      monsters: [
+        {
+          name: 'Frankenstein Reynolds',
+          id: 'asc1'
+        },
+        {
+          name: 'Dee-racula',
+          id: 'asr2'
+        },
+        {
+          name: 'Zombi-Charlie',
+          id: 'as1w'
+        }
+      ]
     }
   }
 
@@ -35,22 +48,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            {this.state.string}
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {/* Put in all the properties that you want to change within state inside the change of state. key-value pairs */}
-          <button onClick={() => this.setState({string: 'Hello Miguel'})}>Change text</button>
-        </header>
+      {
+        this.state.monsters.map(monster => <h1 key={monster.id}> {monster.name}</h1>)
+      }
       </div>
     );
   }
