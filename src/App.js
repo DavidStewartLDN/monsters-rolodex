@@ -33,11 +33,12 @@ componentDidMount() {
       monster.name.toLowerCase().includes(searchField.toLowerCase()));
     return (
       <div className="App">
-      <SearchBox 
-        placeholder = 'Search Monsters'
-        handleChange={this.handleChange}
-      />
-      <CardList monsters={filteredMonsters}></CardList>
+        <h1> Monster Rolodex </h1>
+        <SearchBox 
+          placeholder = 'Search Monsters'
+          handleChange={this.handleChange}
+        />
+        <CardList monsters={filteredMonsters}/>
       </div>
     );
   }
